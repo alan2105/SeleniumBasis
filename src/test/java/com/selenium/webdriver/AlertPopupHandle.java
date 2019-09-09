@@ -13,7 +13,7 @@ public class AlertPopupHandle {
 		WebDriver driver;
 		Alert alert;
 		
-		System.setProperty("webdriver.chrome.driver", "D:/eclipse/java-neon/eclipse/git/SeleniumBasis/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.get("https://www.toolsqa.com/handling-alerts-using-selenium-webdriver/");
 		driver.manage().window().maximize();
