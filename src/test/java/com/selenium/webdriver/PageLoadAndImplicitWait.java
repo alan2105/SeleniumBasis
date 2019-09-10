@@ -1,11 +1,11 @@
 package com.selenium.webdriver;
 
-import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
-public class MouseOverHandle {
+public class PageLoadAndImplicitWait {
 
 	public static void main(String[] args) {
 		WebDriver driver;
@@ -14,14 +14,10 @@ public class MouseOverHandle {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.goindigo.in/");
-		
-		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(By.xpath("//a[text()='Manage']")))
-		.build()
-		.perform();
-		driver.findElement(By.xpath("//i[contains(@class, 'weather')]")).click();
-
+		driver.get("http://demo.cgsdev.com/ProviderPortal/");
+		//driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.quit();
 	}
 
 }
